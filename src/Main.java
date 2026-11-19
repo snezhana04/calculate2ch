@@ -19,26 +19,23 @@ class Calculate {
                     "4 - деление %n");
             int qest = in.nextInt();
             double result = 0;
-            if (qest == 1) {
-                result = number1 + number2;
-                System.out.printf("Результат: %.2f %n", result);
-            } else if (qest == 2) {
-                result = number1 - number2;
-                System.out.printf("Результат: %.2f %n", result);
-            } else if (qest == 3) {
-                result = number1 * number2;
-                System.out.printf("Результат: %.2f %n", result);
-            } else if (qest == 4) {
+            switch (qest) {
+            case 1-> {result = number1 + number2;
+                System.out.printf("Результат: %.2f %n", result);}
+            case 2->{result = number1 - number2;
+                System.out.printf("Результат: %.2f %n", result);}
+            case 3->{result = number1 * number2;
+                System.out.printf("Результат: %.2f %n", result);}
+            case 4->{
                 if (number2 == 0) {
                     System.out.println("Ошибка, на 0 делить нельзя");
                 } else {
                     result = number1 / number2;
                     System.out.printf("Результат: %.2f %n", result);
-                }
+                } }
+                default -> System.out.println("Ошибка, такого варианта нет");
+            };
 
-            } else {
-                System.out.println("Ошибка, такого варианта нет");
-            }
             System.out.printf("Начать заново?%n 1 - да    0 - нет%n");
             int qest2 = in.nextInt();
             if (qest2 == 0){
